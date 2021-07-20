@@ -150,5 +150,10 @@ public class MathematicalOprations {
 		boolean atleast1Even = numberList.stream().anyMatch(checkEven);// returns true if any 1 value match
 		System.out.println("\nAll numbers are even in the list = " + allEvenNumber
 				+ "\nAt least 1 number present in the list = " + atleast1Even);
+		
+		//uc2.9 sort the list elements
+				List<Integer> newSortedList = numberList.stream().sorted() //sorting the values
+												.collect(Collectors.toList()); //returns new sorted list
+				System.out.println("\nList after sorting " + newSortedList);
 	}
 }
