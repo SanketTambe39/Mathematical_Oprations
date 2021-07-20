@@ -111,13 +111,17 @@ public class MathematicalOprations {
 		System.out.println("\nNumbers converted into double using stream are ");
 		numberList.stream().map(Integer::doubleValue) // converting integer to double
 				.forEach(n -> System.out.println(n)); // printing converted values
-		
+
 		// uc 2.3 transform integer into double and store them in list
 		System.out.println("\nNumbers converted into double using stream and store them to list ");
 		List<Double> doublelist = numberList.stream().map(Integer::doubleValue) // converting integer to double
 				.collect(Collectors.toList()); // storing converted values into new list
 		System.out.println("value in new list are " + doublelist);
 
+		// uc 2.4 filter even numbers and store them
+		System.out.println("\nEven Numbers in number list are");
+		List<Integer> evenNumberList = numberList.stream().filter(checkEven).collect(Collectors.toList());
+		System.out.println(evenNumberList);
 	}
 
 }
