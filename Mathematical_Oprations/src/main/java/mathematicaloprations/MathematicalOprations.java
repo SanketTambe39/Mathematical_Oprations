@@ -126,11 +126,17 @@ public class MathematicalOprations {
 				.collect(Collectors.toList());
 		System.out.println(evenNumberList);
 
-		//uc 2.5 filter even numbers and display 1st even number
+		// uc 2.5 filter even numbers and display 1st even number
 		System.out.println("\nFirst Even Numbers in number list is");
 		numberList.stream().filter(checkEven) // filtering even values
 				.peek(n -> System.out.println(n)) // peaking value
 				.findFirst() // find 1st element in stream
 				.orElse(null); // if there is not any even number then it should return null
+		// uc2.6 find minimum and maximum value
+		Integer minimumValue = numberList.stream().filter(checkEven).min(Comparator.comparing(Integer::intValue)) // checks minimum values
+																	.orElse(null);
+		Integer maximumValue = numberList.stream().filter(checkEven).max(Comparator.comparing(Integer::intValue)) // checks maximum values
+																	.orElse(null);
+		System.out.println("\nIn the list minimum Even number is " + minimumValue + " and maximum is " + maximumValue);
 	}
 }
