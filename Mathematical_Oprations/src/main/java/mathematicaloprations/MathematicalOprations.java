@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class MathematicalOprations {
 
@@ -110,6 +111,9 @@ public class MathematicalOprations {
 		System.out.println("\nNumbers converted into double using stream are ");
 		numberList.stream().map(Integer::doubleValue) // converting integer to double
 				.forEach(n -> System.out.println(n)); // printing converted values
+		
+		
+
 	}
 
 }
