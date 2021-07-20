@@ -100,7 +100,11 @@ public class MathematicalOprations {
 				System.out.println("Value " + n);
 			}
 		});
-
+		// uc 2.1 iterate number using streams
+		System.out.println("\nNumbers printed using streams are");
+		numberList.stream().forEach(n -> {
+			System.out.println(n);
+		});
 	}
 
 }
