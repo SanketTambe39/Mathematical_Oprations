@@ -122,7 +122,15 @@ public class MathematicalOprations {
 
 		// uc 2.4 filter even numbers and store them
 		System.out.println("\nEven Numbers in number list are");
-		List<Integer> evenNumberList = numberList.stream().filter(checkEven).collect(Collectors.toList());
+		List<Integer> evenNumberList = numberList.stream().filter(checkEven) // filtering even values
+				.collect(Collectors.toList());
 		System.out.println(evenNumberList);
+
+		//uc 2.5 filter even numbers and display 1st even number
+		System.out.println("\nFirst Even Numbers in number list is");
+		numberList.stream().filter(checkEven) // filtering even values
+				.peek(n -> System.out.println(n)) // peaking value
+				.findFirst() // find 1st element in stream
+				.orElse(null); // if there is not any even number then it should return null
 	}
 }
