@@ -135,7 +135,7 @@ public class MathematicalOprations {
 		// uc2.6 find minimum and maximum value
 		Integer minimumValue = numberList.stream().filter(checkEven).min(Comparator.comparing(Integer::intValue))
 				.orElse(null);
-		Integer maximumValue = numberList.stream().filter(checkEven).max(Comparator.comparing(Integer::intValue)) 
+		Integer maximumValue = numberList.stream().filter(checkEven).max(Comparator.comparing(Integer::intValue))
 				.orElse(null);
 		System.out.println("\nIn the list minimum Even number is " + minimumValue + " and maximum is " + maximumValue);
 
@@ -144,5 +144,11 @@ public class MathematicalOprations {
 		System.out.println("Sum of numbers in the list is " + sumInteger);
 		int count = (int) numberList.stream().count(); // returns the number of element present in it
 		System.out.println("Average of the numbers present in the list is " + sumInteger / count);
+
+		// uc2.8 find at least 1 number is even or all numbers are even
+		boolean allEvenNumber = numberList.stream().allMatch(checkEven); // returns true if all value matches
+		boolean atleast1Even = numberList.stream().anyMatch(checkEven);// returns true if any 1 value match
+		System.out.println("\nAll numbers are even in the list = " + allEvenNumber
+				+ "\nAt least 1 number present in the list = " + atleast1Even);
 	}
 }
