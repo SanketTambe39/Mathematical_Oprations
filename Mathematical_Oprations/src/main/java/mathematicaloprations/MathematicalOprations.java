@@ -1,12 +1,14 @@
 package mathematicaloprations;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class MathematicalOprations {
 
@@ -41,7 +43,7 @@ public class MathematicalOprations {
 
 		// creating Number list
 		List<Integer> numberList = new ArrayList<Integer>();
-		for (int i = 0; i < 6; i++) {
+		for (int i = 1; i < 6; i++) {
 			numberList.add(i);
 		}
 
@@ -97,7 +99,7 @@ public class MathematicalOprations {
 		Predicate<Integer> checkEven = n -> n % 2 == 0;
 		numberList.forEach(n -> {
 			if (checkEven.test(n)) {
-				System.out.println("Value " + n);
+				System.out.println("Value ::" + n);
 			}
 		});
 
