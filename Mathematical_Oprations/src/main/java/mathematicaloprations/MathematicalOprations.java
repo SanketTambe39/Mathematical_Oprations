@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class MathematicalOprations {
 
@@ -83,6 +84,14 @@ public class MathematicalOprations {
 		numberList.forEach(n -> {
 			System.out.println(n);
 		});
+
+		// method 6 using functional interface to convert integer to string
+		System.out.println("Converting number list into double value");
+		Function<Integer, Double> doubleFunction = Integer::doubleValue;
+		numberList.forEach(n -> {
+			System.out.println(doubleFunction.apply(n));
+		});
+
 	}
 
 }
