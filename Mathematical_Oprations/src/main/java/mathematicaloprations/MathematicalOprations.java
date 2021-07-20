@@ -25,6 +25,13 @@ public class MathematicalOprations {
 		System.out.println("Subtract is " + Subtract.calculate(firstNumber, secondNumber));
 		System.out.println("Multiply is " + Multiply.calculate(firstNumber, secondNumber));
 		System.out.println("Divide is " + Division.calculate(firstNumber, secondNumber));
+		
+		//passing lambda function as function parameter
+				System.out.println("\nAfter using lambda functions as function parameter");
+				MyMathFunction.printResult("Addition",firstNumber, secondNumber, add);
+				MyMathFunction.printResult("Subtract",firstNumber, secondNumber, Subtract);
+				MyMathFunction.printResult("Multiply",firstNumber, secondNumber, Multiply);
+				MyMathFunction.printResult("Divide",firstNumber, secondNumber, Division);
 	}
 
 }
