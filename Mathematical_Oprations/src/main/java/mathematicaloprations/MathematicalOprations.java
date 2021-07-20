@@ -102,7 +102,5 @@ public class MathematicalOprations {
 				System.out.println("Value ::" + n);
 			}
 		});
-
 	}
-
 }
