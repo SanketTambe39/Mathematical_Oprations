@@ -132,11 +132,29 @@ public class MathematicalOprations {
 				.peek(n -> System.out.println(n)) // peaking value
 				.findFirst() // find 1st element in stream
 				.orElse(null); // if there is not any even number then it should return null
+
 		// uc2.6 find minimum and maximum value
-		Integer minimumValue = numberList.stream().filter(checkEven).min(Comparator.comparing(Integer::intValue)) // checks minimum values
-																	.orElse(null);
-		Integer maximumValue = numberList.stream().filter(checkEven).max(Comparator.comparing(Integer::intValue)) // checks maximum values
-																	.orElse(null);
+		Integer minimumValue = numberList.stream().filter(checkEven).min(Comparator.comparing(Integer::intValue))
+				.orElse(null);
+		Integer maximumValue = numberList.stream().filter(checkEven).max(Comparator.comparing(Integer::intValue))
+				.orElse(null);
 		System.out.println("\nIn the list minimum Even number is " + minimumValue + " and maximum is " + maximumValue);
+
+		// uc2.7 find sum and average
+		Integer sumInteger = numberList.stream().reduce(0, (a, b) -> a + b); // returns the sum of the number
+		System.out.println("Sum of numbers in the list is " + sumInteger);
+		int count = (int) numberList.stream().count(); // returns the number of element present in it
+		System.out.println("Average of the numbers present in the list is " + sumInteger / count);
+
+		// uc2.8 find at least 1 number is even or all numbers are even
+		boolean allEvenNumber = numberList.stream().allMatch(checkEven); // returns true if all value matches
+		boolean atleast1Even = numberList.stream().anyMatch(checkEven);// returns true if any 1 value match
+		System.out.println("\nAll numbers are even in the list = " + allEvenNumber
+				+ "\nAt least 1 number present in the list = " + atleast1Even);
+		
+		//uc2.9 sort the list elements
+				List<Integer> newSortedList = numberList.stream().sorted() //sorting the values
+												.collect(Collectors.toList()); //returns new sorted list
+				System.out.println("\nList after sorting " + newSortedList);
 	}
 }
