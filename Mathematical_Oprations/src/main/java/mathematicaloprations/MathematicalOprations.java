@@ -97,7 +97,7 @@ public class MathematicalOprations {
 		Predicate<Integer> checkEven = n -> n % 2 == 0;
 		numberList.forEach(n -> {
 			if (checkEven.test(n)) {
-				System.out.println("Value " + n);
+				System.out.println("Value ::" + n);
 			}
 		});
 		// uc 2.1 iterate number using streams
