@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class MathematicalOprations {
 
@@ -90,6 +91,14 @@ public class MathematicalOprations {
 		Function<Integer, Double> doubleFunction = Integer::doubleValue;
 		numberList.forEach(n -> {
 			System.out.println(doubleFunction.apply(n));
+		});
+		// method 7 check even number in list
+		System.out.println("\nCheck Even number in list and printing them");
+		Predicate<Integer> checkEven = n -> n % 2 == 0;
+		numberList.forEach(n -> {
+			if (checkEven.test(n)) {
+				System.out.println("Value " + n);
+			}
 		});
 
 	}
